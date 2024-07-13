@@ -6,7 +6,7 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
 

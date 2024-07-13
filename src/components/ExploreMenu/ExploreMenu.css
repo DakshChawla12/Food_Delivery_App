@@ -46,13 +46,50 @@
 .explore-menu hr{
     margin: 10px 0px;
     height: 2px;
-    background-color: #e2e2e2;
+    background-color: #747474;
     border: none;
 }
 
 .explore-menu-list-item .active{
     border: 4px solid tomato;
     padding: 2px;
+}
+
+.filter-price{
+    display: flex;
+    gap: 2.5rem;
+}
+
+.filter-price label{
+    font-size: 1.3rem;
+}
+
+.filter-price input{
+    height: 2rem;
+    padding: 5px;
+    margin-left: 1rem;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    color: #747474;
+    border: 2px solid #747474;
+}
+
+.filter-price .filter-btn{
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.filter-price .clear-filter-btn{
+    background-color: tomato;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    width: 7rem;
 }
 
 @media(max-width:1050px){

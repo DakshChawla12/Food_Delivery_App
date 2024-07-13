@@ -6,12 +6,9 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = ({ children }) => {
 
     const [cartItems, setCartItems] = useState({});
+    const [filteredItems, setFilteredItems] = useState(food_list);
 
     const addToCart = (itemId) => {
-        for(const item in cartItems){
-            console.log(item);
-            console.log(cartItems[item]);
-        }
         if (!cartItems[itemId]) {
             setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
         }
@@ -36,8 +33,25 @@ const StoreContextProvider = ({ children }) => {
         return totalAmount;
     }
 
+    const filterItems = (minPrice, maxPrice) => {
+        let filtered;
+        if (minPrice === '' && maxPrice === '') {
+            filtered = food_list; // No filters applied, show all items
+        } else {
+            filtered = food_list.filter(item => {
+                return (minPrice === '' || item.price >= minPrice) &&
+                    (maxPrice === '' || item.price <= maxPrice);
+            });
+        }
+        setFilteredItems(filtered);
+    };
+
+    const clearFilter = () => {
+        setFilteredItems(food_list);
+    }
+
     const contextValue = {
-        food_list, cartItems, setCartItems, addToCart, removeFromCart,getCartTotal
+        food_list, cartItems, setCartItems, addToCart, removeFromCart, getCartTotal, filterItems, filteredItems, clearFilter
     }
 
 
