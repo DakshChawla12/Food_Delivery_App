@@ -42,7 +42,7 @@ const ExploreMenu = ({ category, setCategory }) => {
                     <input type="text" className='min' id='min' ref={minPriceRef} />
                 </div>
                 <div className="max-div">
-                    <label htmlFor="max">enter minimum price:</label>
+                    <label htmlFor="max">enter maximum price:</label>
                     <input type="text" className='max' id='max' ref={maxPriceRef} />
                 </div>
                 <button className='filter-btn' onClick={handleSearch}>search</button>
