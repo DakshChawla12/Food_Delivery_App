@@ -97,4 +97,7 @@
         max-width: (100%);
         font-size: 14px;
     }
+    .filter-price{
+        flex-direction: column;
+    }
 }
