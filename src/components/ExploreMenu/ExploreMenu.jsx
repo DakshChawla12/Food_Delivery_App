@@ -8,7 +8,7 @@ const ExploreMenu = ({ category, setCategory }) => {
 
     const minPriceRef = useRef(null);
     const maxPriceRef = useRef(null);
-    const { filterItems , clearFilter} = useContext(StoreContext);
+    const { filterItems, clearFilter } = useContext(StoreContext);
 
     const handleSearch = () => {
         const minPrice = minPriceRef.current.value;
@@ -18,6 +18,14 @@ const ExploreMenu = ({ category, setCategory }) => {
         minPriceRef.current.value = '';
         maxPriceRef.current.value = '';
     };
+
+    const itemName = useRef(null);
+
+    const { search } = useContext(StoreContext);
+    const handleSearchByName = () => {
+        search(itemName.current.value);
+        itemName.current.value = '';
+    }
 
 
     return (
@@ -47,6 +55,12 @@ const ExploreMenu = ({ category, setCategory }) => {
                 </div>
                 <button className='filter-btn' onClick={handleSearch}>search</button>
                 <button className='clear-filter-btn' onClick={clearFilter}>clear filters</button>
+            </div>
+            <hr />
+            <div className='search-by-name'>
+                <h3 className='search-heading'>Or search your favourite food:</h3>
+                <input type="text" className='search-box' ref={itemName} />
+                <button className='search-btn' onClick={handleSearchByName}>search</button>
             </div>
             <hr />
         </div>

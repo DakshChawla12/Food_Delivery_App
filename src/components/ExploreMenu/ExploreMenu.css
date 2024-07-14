@@ -92,6 +92,31 @@
     width: 7rem;
 }
 
+.search-by-name{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.search-by-name .search-box{
+    height: 2rem;
+    border: 2px solid #747474;
+    border-radius: 10px;
+    margin-right: 1rem;
+    outline: none;
+    padding: 5px;
+    color: #49557e;
+    font-size: medium;
+}
+
+.search-by-name .search-btn{
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    height: 34px;
+    width: 100px;
+}
+
 @media(max-width:1050px){
     .explore-menu-text{
         max-width: (100%);
