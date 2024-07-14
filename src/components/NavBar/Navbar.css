@@ -23,7 +23,7 @@
     gap: 40px;
 }
 
-.navBar button{
+.navBar .sign-in-btn{
     background: transparent;
     font-size: 16px;
     color:#49557e;
@@ -34,8 +34,22 @@
     transition: 0.3s;
 }
 
-.navBar button:hover{
+.navBar .sign-in-btn:hover{
     background-color: #fff4f2;
+}
+
+.navBar .search-btn{
+    border: none;
+    border-radius: 10px;
+    height: 2rem;
+    width: 4.7rem;
+    color: white;
+    background-color: tomato;
+    transition: 0.5s;
+}
+
+.navBar .search-btn:hover{
+    transform: scale(1.1);
 }
 
 .navBar .active{
@@ -60,6 +74,16 @@
     right: -8px;
 }
 
+.search-box{
+    height: 2rem;
+    border: 1px solid tomato;
+    border-radius: 10px;
+    outline: none;
+    padding: 5px;
+    color: #49557e;
+    font-size: medium;
+}
+
 @media (max-width:1050px){
     .navbar .logo{
         width: 140px;
@@ -76,6 +100,9 @@
     }
     .navbar-right button{
         padding: 8px 25px;
+    }
+    .search-box , .search-btn{
+        display: none;
     }
 }
 

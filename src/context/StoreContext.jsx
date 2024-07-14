@@ -7,6 +7,7 @@ const StoreContextProvider = ({ children }) => {
 
     const [cartItems, setCartItems] = useState({});
     const [filteredItems, setFilteredItems] = useState(food_list);
+    // const [searchQuery,setSearchQuery] = useState('');
 
     const addToCart = (itemId) => {
         if (!cartItems[itemId]) {
@@ -50,8 +51,19 @@ const StoreContextProvider = ({ children }) => {
         setFilteredItems(food_list);
     }
 
+    const search = (itemName) =>{
+        let filtered;
+        if(itemName === ''){
+            filtered = food_list;
+        }
+        else{
+            filtered = food_list.filter((item) => item.name.toLowerCase() === itemName.toLowerCase());
+        }
+        setFilteredItems(filtered);
+    }
+
     const contextValue = {
-        food_list, cartItems, setCartItems, addToCart, removeFromCart, getCartTotal, filterItems, filteredItems, clearFilter
+        food_list, cartItems, setCartItems, addToCart, removeFromCart, getCartTotal, filterItems, filteredItems, clearFilter, search
     }
 
 
